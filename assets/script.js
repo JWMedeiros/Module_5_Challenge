@@ -1,5 +1,49 @@
 let datePara = document.querySelector("#currentDay");
 let container = document.querySelector(".container");
+let bodies=document.querySelectorAll(".text-body");
+let btns = document.querySelectorAll(".btn");
+
+let DaySchedule = {
+    "currDay":"",
+    "times":["","","","","","","","",""]
+}
+
+function openApp(){
+    fillBlocks();
+    datePara.textContent=moment().format("MMM, Do YYYY");
+    let saved = JSON.parse(localStorage.getItem("schedule"));
+    
+    //Add to local if DNE
+    if (!saved){
+        localStorage.setItem("schedule", JSON.stringify(DaySchedule));
+    }
+    //if current saved date= todays date, populate bodies
+    else if (saved.currDay===datePara.textContent){
+        for (let i=0;i<bodies.length;i++){
+            bodies[i].textContent=saved.times[i];
+        }
+    }
+    //Otherwise set to new day and wipe schedule
+    else{
+        DaySchedule.currDay=datePara.textContent;
+        for (let i=0; i<DaySchedule.times.length; i++){
+            DaySchedule.times[i]="";
+        }
+        localStorage.setItem("schedule", JSON.stringify(DaySchedule));
+    }
+}
+
+function saveCalendar(){
+    DaySchedule.currDay=moment().format("MMM, Do YYYY");
+    for (let i=0; i<DaySchedule.times.length; i++){
+        DaySchedule.times[i]=bodies[i].textContent;
+    }
+    localStorage.setItem("schedule", JSON.stringify(DaySchedule));
+}
+
+for (let i=0;i<btns.length;i++){
+    btns[i].addEventListener("click",saveCalendar)
+}
 
 function fillBlocks(){
     for (let i=0; i<9; i++){
@@ -32,15 +76,16 @@ function fillBlocks(){
     }
 }
 
-fillBlocks();
+for (let i=0; i<bodies.length;i++){
+    bodies[i].addEventListener("click",function(event){
+        let element=event.target;
+        if (element.style.backgroundColor==="grey"){
+            alert("You can't add events to past times!");
+        }
+        else {
+            element.textContent=prompt("Add your event");
+        }
+    })
+}
 
-container.addEventListener("click",function(event){
-    let element =event.target;
-    
-})
-
-
-//Constantly check time (But only display date)
-let timeInterval = setInterval(function () {
-    datePara.textContent=moment().format("MMM, Do YYYY");
-}, 1000);
+openApp();
