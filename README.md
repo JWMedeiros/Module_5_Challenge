@@ -1,4 +1,4 @@
-# Module_5_Challenge
+# Workday_Scheduler
 
 Module 5 Challenge created for the University of Toronto Bootcamp May 28, 2022 by John Medeiros.
 
