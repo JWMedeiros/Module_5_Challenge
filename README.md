@@ -1,7 +1,55 @@
-# Workday_Scheduler
+# Workday_Scheduler 
+  [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) 
 
-Module 5 Challenge created for the University of Toronto Bootcamp May 28, 2022 by John Medeiros.
+  https://opensource.org/licenses/Apache-2.0
 
-Please check out the full app here: https://jwmedeiros.github.io/Workday_Scheduler/
+  
+  # Description
+  A webapp designed to help you schedule your current workday. 
 
-Screenshot of app: ![image](https://user-images.githubusercontent.com/44784107/170848361-c976a501-1b71-47e0-9809-ef7fdf82b7e6.png)
+
+  # Table of Contents
+  [Description](#description) 
+
+  [Table of Contents](#table-of-contents) 
+
+  [Installation](#installation) 
+
+  [Usage](#usage) 
+
+  [License](#license) 
+
+  [How to Contribute](#contributing)
+
+  [Testing](#tests)
+
+  [Questions about the project](#questions)
+
+  
+  # Installation
+  To run locally, please download the code and run it through localhost. Otherwise you can use the deployed application.
+
+  
+  # Usage
+  This project uses the browsers localstorage and moment.js to keep track of your current workday schedule. It saves when you click any of the save buttons, and only allows you to schedule events at the current time or in the future. It refreshes daily.
+
+  
+  # License
+  This project is covered under the apache license. A permissive license whose main conditions require preservation of copyright and license notices. Contributors provide an express grant of patent rights. Licensed works, modifications, and larger works may be distributed under different terms and without source code.
+
+  
+  # Contributing
+  Any contribution suggestions appreciated!
+
+  
+  # Tests
+  No tests available for the project currently.
+
+  
+  # Questions
+  JWMedeiros
+  Please checkout my Github at:
+  https://github.com/JWMedeiros
+
+
+  For any questions about the project please send me an email at jon0908776@gmail.com
